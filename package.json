@@ -1,5 +1,5 @@
 {
-  "name": "try-next-app",
+  "name": "try-next-shadcn",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "format": "oxfmt src/"
+    "format": "oxfmt src/",
+    "prepare": "husky"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -29,8 +30,18 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.1.1",
     "oxfmt": "^0.60.0",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "lint-staged": {
+    "**/*": "oxfmt --no-error-on-unmatched-pattern"
+  },
+  "engines": {
+    "node": ">=24.10.0 <27.0.0",
+    "pnpm": ">=11.2.2 <12"
+  },
+  "packageManager": "pnpm@11.2.2"
 }
