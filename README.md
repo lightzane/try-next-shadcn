@@ -1,4 +1,62 @@
+# Try Next.js and shadcn/ui
+
+## How this project was created
+
+See also `git log` for commits history.
+
+### Next.js from scratch
+
+```bash
+pnpm create next-app@latest
+
+✔ What is your project named? … try-next-shadcn
+✔ Would you like to use the recommended Next.js defaults? › Yes, use recommended defaults
+Creating a new Next.js app in ...
+
+Using pnpm.
+
+Initializing project with template: app-tw
+```
+
+> This project was updated to use a `src` folder.
+> Thus, moving `app` folder within `src` folder
+
+Observe `pnpm-workspace.yaml` and change to `false` on unnecessary builds to allow
+
+### Add shadcn/ui
+
+1. Go to https://ui.shadcn.com/create
+2. Customize your UI (e.g. style: **Luma**)
+3. Click **Get Code** and select with **Next.js** _template_ and **Radix UI** as _base_.
+4. Use pointer on buttons
+5. Then copy command (example below)
+
+```bash
+pnpm dlx shadcn@latest init --preset b0 --base radix --template next --pointer
+```
+
+Observe the generated [components.json](./components.json),
+this will be used as a reference by Shadcn CLI
+or commands such as `pnpm dlx shadcn@latest add dropdown-menu`.
+
+#### Inter font feature settings
+
+- Check [app/globals.css](./src/app/globals.css#L54) for `--default-font-feature-settings`
+- Check [app/layout.tsx](./src/app/layout.tsx#L33) for `<head>`
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+#### Dark Theme
+
+Reference: https://ui.shadcn.com/docs/dark-mode/next
+
+#### Adding components
+
+Search for the desired components in: https://ui.shadcn.com/docs/components
+
+```bash
+pnpm dlx shadcn@latest add dropdown-menu
+```
 
 ## Getting Started
 
