@@ -9,6 +9,6 @@
 
   // prettier-plugin-tailwindcss is built-in to oxfmt, so we can use the "sortTailwindcss" option
   "sortTailwindcss": {
-    "functions": ["tv"]
+    "functions": ["cva"]
   }
 }
